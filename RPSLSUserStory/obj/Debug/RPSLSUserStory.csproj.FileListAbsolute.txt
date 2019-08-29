@@ -1,0 +1,2 @@
+C:\Users\jrack\source\repos\RPSLSUserStory\RPSLSUserStory\obj\Debug\RPSLSUserStory.csprojAssemblyReference.cache
+C:\Users\jrack\source\repos\RPSLSUserStory\RPSLSUserStory\obj\Debug\RPSLSUserStory.csproj.CoreCompileInputs.cache
