@@ -12,7 +12,6 @@ namespace RPSLSUserStory
         public List<string> gestureOptions;
         public int score;
         public string selection;
-
         public Player ()
         {
             gesture = "";
@@ -21,7 +20,6 @@ namespace RPSLSUserStory
             score = 0;
             selection = "";
         }
-
         public abstract void PlayerGesture();
         
     }
