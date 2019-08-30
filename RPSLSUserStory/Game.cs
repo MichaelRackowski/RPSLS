@@ -30,38 +30,25 @@ namespace RPSLSUserStory
 
 
         }
-
-
         public void RunGame()
         {
             DisplayRules();
             PlayerSelection();
-
             while (playerOne.score < 2 && playerTwo.score < 2)
             {
                 playerOne.PlayerGesture();
-                
-
                 playerTwo.PlayerGesture();
                 Console.WriteLine("p1 : " + playerOne.gesture);
                 Console.WriteLine("p2: " + playerTwo.gesture);
-
                 ComparePlayerGesture();
-
                 DisplayPlayerScore(playerOne);
-
                 DisplayPlayerScore(playerTwo);
             }
-
             DisplayWinner();
-
         }
-
-
         public void ComparePlayerGesture()
         {
-
-            switch (playerOne.gesture)
+           switch (playerOne.gesture)
             {
                 case "rock":
                     if (playerTwo.gesture == "scissors" || playerTwo.gesture == "lizard")
@@ -120,7 +107,6 @@ namespace RPSLSUserStory
                     {
                         Console.WriteLine("PlayerOne and PlayerTwo tied");
                         Console.ReadLine();
-
                     }
                     break;
                 case "spock":
@@ -149,7 +135,6 @@ namespace RPSLSUserStory
                         Console.ReadLine();
                         playerOne.score++;
                     }
-
                     else if (playerTwo.gesture == "scissors" || playerTwo.gesture == "lizard")
                     {
                         Console.WriteLine("PlayerTwo Wins");
@@ -181,25 +166,19 @@ namespace RPSLSUserStory
                 playerTwo = new computer();
             }
         }
-
-
-
-
-       public void DisplayRules()
+      public void DisplayRules()
         {
             foreach (string rule in rules)
             {
                 Console.WriteLine(rule);
 
             }
-          
             Console.ReadLine();
         }
         public void DisplayPlayerScore(Player player)
         {
             Console.WriteLine(player.score);
         }
-
         public void DisplayWinner()
         {
             if (playerOne.score == 2)
@@ -207,7 +186,6 @@ namespace RPSLSUserStory
                 Console.WriteLine("PlayerOne wins!");
                 Console.ReadLine();
             }
-
             else if (playerTwo.score == 2)
             {
                 Console.WriteLine("PlayerTwo wins!");
