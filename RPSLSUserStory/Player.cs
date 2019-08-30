@@ -16,7 +16,8 @@ namespace RPSLSUserStory
         public Player ()
         {
             gesture = "";
-            gestureOptions = new List<string>();
+            gestureOptions = new List<string>() { "rock", "paper", "scissors", "lizard", "spock",};
+            
             score = 0;
             selection = "";
         }

@@ -10,14 +10,11 @@ namespace RPSLSUserStory
     {
         public string endgame;
         public List<string> rules;
+        public List<string> gestureoptions;
         Player playerOne;
         private int score;
         Player playerTwo;
-
-        // another player object (p2)
-
-
-        public Game ()
+            public Game ()
         {
             rules = new List<string>();
             rules.Add("Rock crushes Scissors");
@@ -35,106 +32,107 @@ namespace RPSLSUserStory
 
             //endgame = (score > 2 ); 
         }
+       
 
         public void RunGame()
         {
             DisplayRules();
+            Displaygestureoptions();
             PlayerSelection();
             Console.WriteLine(playerOne.gesture);
             playerOne.PlayerGesture();
             Console.WriteLine(playerTwo.gesture);
             playerTwo.PlayerGesture();
-
-
-        }
+          }
 
 
         public void PlayerGesture()
         {
+          
             switch (playerOne.gesture)
             {
-                case "Rock":
-                    if (playerTwo.gesture == "Scissors" || playerTwo.gesture == "Lizard")
+                case "rock":
+                    if (playerTwo.gesture == "scissors" || playerTwo.gesture == "lizard")
                     {
                         Console.WriteLine("PlayerOne Wins");
                         Console.ReadLine();
 
                     }
-                    else if (playerTwo.gesture == "Spock" || playerTwo.gesture == "Paper")
+                    else if (playerTwo.gesture == "spock" || playerTwo.gesture == "paper")
                     {
                         Console.WriteLine("playerTwo Wins");
                         Console.ReadLine();
                     }
-                    else if (playerTwo.gesture == "Rock")
+                    else if (playerTwo.gesture == "rock")
                     {
                         Console.WriteLine("PlayerOne and PlayerTwo tied");
                         Console.ReadLine();
                     }
                     break;
-                case "Scissors":
-                    if (playerTwo.gesture == "Paper" || playerTwo.gesture == "Lizard")
+                case "scissors":
+                    if (playerTwo.gesture == "paper" || playerTwo.gesture == "lizard")
                     {
                         Console.WriteLine("PlayerOne Wins");
                         Console.ReadLine();
                     }
-                    else if (playerTwo.gesture == "Rock" || playerTwo.gesture == "Spock")
+                    else if (playerTwo.gesture == "rock" || playerTwo.gesture == "spock")
                     {
                         Console.WriteLine("PlayerTwo Wins");
                         Console.ReadLine();
                     }
-                    else if (playerTwo.gesture == "Scissors")
+                    else if (playerTwo.gesture == "scissors")
                     {
                         Console.WriteLine("PlayerOne and PlayerTwo tied");
                         Console.ReadLine();
                     }
                     break;
-                case "Lizard":
-                    if (playerTwo.gesture == "Spock" || playerTwo.gesture == "Paper")
+                case "lizard":
+                    if (playerTwo.gesture == "spock" || playerTwo.gesture == "paper")
                     {
                         Console.WriteLine("PlayerOne Wins");
                         Console.ReadLine();
                     }
-                    else if (playerTwo.gesture == "Scissors" || playerTwo.gesture == "Rock")
+                    else if (playerTwo.gesture == "scissors" || playerTwo.gesture == "rock")
                     {
                         Console.WriteLine("PlayerTwo Wins");
                         Console.ReadLine();
                     }
-                    else if (playerTwo.gesture == "Lizard")
+                    else if (playerTwo.gesture == "lizard")
                     {
                         Console.WriteLine("PlayerOne and PlayerTwo tied");
                         Console.ReadLine();
                     }
                     break;
-                case "Spock":
-                    if (playerTwo.gesture == "Rock" || playerTwo.gesture == "Scissors")
+                case "spock":
+                    if (playerTwo.gesture == "rock" || playerTwo.gesture == "scissors")
                     {
                         Console.WriteLine("PlayerOne Wins");
                         Console.ReadLine();
                     }
-                    else if (playerTwo.gesture == "Paper" || playerTwo.gesture == "Lizard")
+                    else if (playerTwo.gesture == "paper" || playerTwo.gesture == "lizard")
                     {
                         Console.WriteLine("PlayerTwo Wins");
                         Console.ReadLine();
                     }
-                    else if (playerTwo.gesture == "Spock")
+                    else if (playerTwo.gesture == "spock")
                     {
                         Console.WriteLine("PlayerOne and PlayerTwo tied");
                         Console.ReadLine();
                     }
                     break;
-                case "Paper":
-                    if (playerTwo.gesture == "Rock" || playerTwo.gesture == "Spock")
+                case "paper":
+                    if (playerTwo.gesture == "rock" || playerTwo.gesture == "spock")
                     {
                         Console.WriteLine("PlayerOne Wins");
                         Console.ReadLine();
                     }
 
-                    else if (playerTwo.gesture == "Scissors" || playerTwo.gesture == "Lizard")
+                    else if (playerTwo.gesture == "scissors" || playerTwo.gesture == "lizard")
                     {
                         Console.WriteLine("PlayerTwo Wins");
                         Console.ReadLine();
                     }
-                    else if ( playerTwo.gesture == "Paper")
+                    else if ( playerTwo.gesture == "paper")
                     {
                         Console.WriteLine("PlayerOne and PlayerTwo tied");
                         Console.ReadLine();
@@ -149,12 +147,12 @@ namespace RPSLSUserStory
         public void PlayerSelection()
         {
             Console.WriteLine("How would you like to play? [PvP] [PvC]");
-            string selection = Console.ReadLine();
-            if (selection == "PvP")
+            string selection = Console.ReadLine().ToLower();
+            if (selection == "pvp")
             {
                 playerTwo = new human();    
             }
-            else if (selection == "PvC")
+            else if (selection == "pvc")
             {
                 playerTwo = new computer();
             }    
@@ -166,10 +164,12 @@ namespace RPSLSUserStory
         public List<string> DisplayRules()
         {
             return rules;
-
-
         }
 
+        public List<string> Displaygestureoptions()
+        {
+            return gestureoptions;
+        }
 
 
 

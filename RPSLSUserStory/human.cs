@@ -11,7 +11,7 @@ namespace RPSLSUserStory
         public override void PlayerGesture()
             {
                 Console.WriteLine("Which would you like to pick? [Rock] [Paper] [Scissors] [Lizard] [Spock]");
-            gesture = Console.ReadLine();
+            gesture = Console.ReadLine().ToLower() ;
 
         }
 

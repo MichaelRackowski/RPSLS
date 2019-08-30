@@ -10,7 +10,9 @@ namespace RPSLSUserStory
     {
         public override void PlayerGesture()
         {
-            //put randomizer here
+            Random RNG = new Random();
+            var list = new List<string> { "rock", "paper", "scissors", "lizard", "spock" };
+            int index = RNG.Next(list.Count);
 
         }
 
