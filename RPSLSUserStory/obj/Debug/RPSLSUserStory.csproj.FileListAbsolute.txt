@@ -1,2 +1,7 @@
 C:\Users\jrack\source\repos\RPSLSUserStory\RPSLSUserStory\obj\Debug\RPSLSUserStory.csprojAssemblyReference.cache
 C:\Users\jrack\source\repos\RPSLSUserStory\RPSLSUserStory\obj\Debug\RPSLSUserStory.csproj.CoreCompileInputs.cache
+C:\Users\jrack\source\repos\RPSLSUserStory\RPSLSUserStory\bin\Debug\RPSLSUserStory.exe.config
+C:\Users\jrack\source\repos\RPSLSUserStory\RPSLSUserStory\bin\Debug\RPSLSUserStory.exe
+C:\Users\jrack\source\repos\RPSLSUserStory\RPSLSUserStory\bin\Debug\RPSLSUserStory.pdb
+C:\Users\jrack\source\repos\RPSLSUserStory\RPSLSUserStory\obj\Debug\RPSLSUserStory.exe
+C:\Users\jrack\source\repos\RPSLSUserStory\RPSLSUserStory\obj\Debug\RPSLSUserStory.pdb

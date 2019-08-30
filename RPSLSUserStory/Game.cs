@@ -8,13 +8,11 @@ namespace RPSLSUserStory
 {
     class Game
     {
-        public string endgame;
         public List<string> rules;
-        public List<string> gestureoptions;
+        public List<string> gestureOptions;
         Player playerOne;
-        private int score;
         Player playerTwo;
-            public Game ()
+        public Game()
         {
             rules = new List<string>();
             rules.Add("Rock crushes Scissors");
@@ -28,40 +26,57 @@ namespace RPSLSUserStory
             rules.Add("Paper disproves Spock");
             rules.Add("Spock vaporizes Rock");
 
-             playerOne = new human();
+            playerOne = new human();
 
-            //endgame = (score > 2 ); 
+
         }
-       
+
 
         public void RunGame()
         {
             DisplayRules();
-            Displaygestureoptions();
             PlayerSelection();
-            Console.WriteLine(playerOne.gesture);
-            playerOne.PlayerGesture();
-            Console.WriteLine(playerTwo.gesture);
-            playerTwo.PlayerGesture();
-          }
+
+            while (playerOne.score < 2 && playerTwo.score < 2)
+            {
+                playerOne.PlayerGesture();
+                
+
+                playerTwo.PlayerGesture();
+                Console.WriteLine("p1 : " + playerOne.gesture);
+                Console.WriteLine("p2: " + playerTwo.gesture);
+
+                ComparePlayerGesture();
+
+                DisplayPlayerScore(playerOne);
+
+                DisplayPlayerScore(playerTwo);
+            }
+
+            DisplayWinner();
+
+        }
 
 
-        public void PlayerGesture()
+        public void ComparePlayerGesture()
         {
-          
+
             switch (playerOne.gesture)
             {
                 case "rock":
                     if (playerTwo.gesture == "scissors" || playerTwo.gesture == "lizard")
                     {
+
                         Console.WriteLine("PlayerOne Wins");
                         Console.ReadLine();
+                        playerOne.score++;
 
                     }
                     else if (playerTwo.gesture == "spock" || playerTwo.gesture == "paper")
                     {
                         Console.WriteLine("playerTwo Wins");
                         Console.ReadLine();
+                        playerTwo.score++;
                     }
                     else if (playerTwo.gesture == "rock")
                     {
@@ -74,11 +89,13 @@ namespace RPSLSUserStory
                     {
                         Console.WriteLine("PlayerOne Wins");
                         Console.ReadLine();
+                        playerOne.score++;
                     }
                     else if (playerTwo.gesture == "rock" || playerTwo.gesture == "spock")
                     {
                         Console.WriteLine("PlayerTwo Wins");
                         Console.ReadLine();
+                        playerTwo.score++;
                     }
                     else if (playerTwo.gesture == "scissors")
                     {
@@ -91,16 +108,19 @@ namespace RPSLSUserStory
                     {
                         Console.WriteLine("PlayerOne Wins");
                         Console.ReadLine();
+                        playerOne.score++;
                     }
                     else if (playerTwo.gesture == "scissors" || playerTwo.gesture == "rock")
                     {
                         Console.WriteLine("PlayerTwo Wins");
                         Console.ReadLine();
+                        playerTwo.score++;
                     }
                     else if (playerTwo.gesture == "lizard")
                     {
                         Console.WriteLine("PlayerOne and PlayerTwo tied");
                         Console.ReadLine();
+
                     }
                     break;
                 case "spock":
@@ -108,11 +128,13 @@ namespace RPSLSUserStory
                     {
                         Console.WriteLine("PlayerOne Wins");
                         Console.ReadLine();
+                        playerOne.score++;
                     }
                     else if (playerTwo.gesture == "paper" || playerTwo.gesture == "lizard")
                     {
                         Console.WriteLine("PlayerTwo Wins");
                         Console.ReadLine();
+                        playerTwo.score++;
                     }
                     else if (playerTwo.gesture == "spock")
                     {
@@ -125,14 +147,16 @@ namespace RPSLSUserStory
                     {
                         Console.WriteLine("PlayerOne Wins");
                         Console.ReadLine();
+                        playerOne.score++;
                     }
 
                     else if (playerTwo.gesture == "scissors" || playerTwo.gesture == "lizard")
                     {
                         Console.WriteLine("PlayerTwo Wins");
                         Console.ReadLine();
+                        playerTwo.score++;
                     }
-                    else if ( playerTwo.gesture == "paper")
+                    else if (playerTwo.gesture == "paper")
                     {
                         Console.WriteLine("PlayerOne and PlayerTwo tied");
                         Console.ReadLine();
@@ -150,30 +174,53 @@ namespace RPSLSUserStory
             string selection = Console.ReadLine().ToLower();
             if (selection == "pvp")
             {
-                playerTwo = new human();    
+                playerTwo = new human();
             }
             else if (selection == "pvc")
             {
                 playerTwo = new computer();
-            }    
+            }
+        }
+
+
+
+
+       public void DisplayRules()
+        {
+            foreach (string rule in rules)
+            {
+                Console.WriteLine(rule);
+
+            }
+          
+            Console.ReadLine();
+        }
+        public void DisplayPlayerScore(Player player)
+        {
+            Console.WriteLine(player.score);
+        }
+
+        public void DisplayWinner()
+        {
+            if (playerOne.score == 2)
+            {
+                Console.WriteLine("PlayerOne wins!");
+                Console.ReadLine();
+            }
+
+            else if (playerTwo.score == 2)
+            {
+                Console.WriteLine("PlayerTwo wins!");
+                Console.ReadLine();
+            }
         }
         
-
-
-
-        public List<string> DisplayRules()
-        {
-            return rules;
-        }
-
-        public List<string> Displaygestureoptions()
-        {
-            return gestureoptions;
-        }
-
-
-
-
     }
 
 }
+
+
+
+    
+
+

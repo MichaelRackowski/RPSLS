@@ -11,9 +11,9 @@ namespace RPSLSUserStory
         public override void PlayerGesture()
         {
             Random RNG = new Random();
-            var list = new List<string> { "rock", "paper", "scissors", "lizard", "spock" };
-            int index = RNG.Next(list.Count);
-
+            
+            int index = RNG.Next(gestureOptions.Count);
+            gesture = gestureOptions[index];
         }
 
     }
