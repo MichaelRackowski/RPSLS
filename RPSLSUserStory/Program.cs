@@ -11,10 +11,7 @@ namespace RPSLSUserStory
         static void Main(string[] args)
         {
             computer test = new computer();
-
             test.PlayerGesture();
-
-
             Game game = new Game();
             game.RunGame();
         }

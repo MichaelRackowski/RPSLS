@@ -10,8 +10,7 @@ namespace RPSLSUserStory
     {
         public override void PlayerGesture()
         {
-            Random RNG = new Random();
-            
+            Random RNG = new Random();            
             int index = RNG.Next(gestureOptions.Count);
             gesture = gestureOptions[index];
         }
